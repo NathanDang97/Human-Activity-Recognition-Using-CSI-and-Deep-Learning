@@ -9,6 +9,8 @@ This project implements a deep learning-based system to classify human activitie
 - Evaluate performance and explore enhancements using bounding box data.
 
 ## 📁 Dataset
+
+### 🌐 Source
 The dataset used in this project is from Figshare:​
 
 > **Title:** Dataset for Human Activity Recognition using Wi-Fi Channel State Information (CSI) data
@@ -19,10 +21,19 @@ The dataset used in this project is from Figshare:​
 > 
 > **License:** CC BY 4.0
 
+### 🗃️ Dataset Scope
+The full dataset (Zhuravchak & Kapshii, 2021) consists of multiple recording sessions performed in different indoor environments and across both 2.4 GHz and 5 GHz Wi-Fi channels. Each session includes labeled CSI data for a range of human activities, with variations in room layout, frequency band, and device configuration.
+
+For this project, I used Session 1 in Room 1, which was recorded using a 5 GHz Wi-Fi channel. This subset was selected to simplify experimentation and gain practical experience in handling CSI-based activity recognition, without introducing cross-session or cross-frequency variability. More details can be found in the section below.
+
+### 📐 Dataset Structure Note
+The CSI data in this project consists of 1026 features per sample, which we reshape into matrices of **114 subcarriers × 9 time steps**. This structure reflects the wireless channel’s frequency and temporal characteristics, enabling deep learning models to learn both spectral and sequential patterns. The number of subcarriers (114) is consistent with CSI collected on 5 GHz Wi-Fi channels using wider bandwidths (e.g., 80 MHz).
+
 This dataset includes:
 - `data.csv`: Raw CSI data per packet.
 - `label.csv`: Activity labels per sample.
 - `label_boxes.csv`: Bounding box information (optional extension).
+
 
 ## 🚀 Getting Started
 1. Download the dataset and place it in the `data/` folder.
