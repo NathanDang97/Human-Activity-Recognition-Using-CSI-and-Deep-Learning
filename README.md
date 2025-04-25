@@ -34,16 +34,9 @@ This dataset includes:
 - `label.csv`: Activity labels per sample.
 - `label_boxes.csv`: Bounding box information (optional extension).
 
-## 🛠️ Requirements
-- Python 3.8+
-- PyTorch
-- NumPy
-- pandas
-- scikit-learn
-
-## 📌 Notes
-- Adjust number of subcarriers or reshape logic in `preprocess.py` based on actual dataset shape.
-- Optional: Use `label_boxes.csv` for incorporating spatial features.
+## 📌 Results
+- **Accuracy:** ~98%
+- **Note:** Although fine-tuning yielded only a modest accuracy improvement, the structure of the code allows for easy future experimentation and optimization.
 
 <details> <summary>📚 <strong>BibTeX Citation</strong></summary>
 @dataset{zhuravchak2021csi,
