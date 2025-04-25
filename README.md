@@ -34,12 +34,6 @@ This dataset includes:
 - `label.csv`: Activity labels per sample.
 - `label_boxes.csv`: Bounding box information (optional extension).
 
-
-## 🚀 Getting Started
-1. Download the dataset and place it in the `data/` folder.
-2. Run `scripts/preprocess.py` to generate `X.npy` and `y.npy`.
-3. Run `scripts/train_model.py` to train the deep learning model.
-
 ## 🛠️ Requirements
 - Python 3.8+
 - PyTorch
