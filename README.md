@@ -1,12 +1,15 @@
 # Human Activity Recognition Using CSI and Deep Learning
 
-## 🔍 Goal
-This project implements a deep learning-based system to classify human activities using Wi-Fi Channel State Information (CSI) data. The dataset used is from Figshare and includes CSI values along with activity labels.
+## 🧠 Overview 
+### Project Goal
+This project builds a deep learning model to recognize human activities based on Wi-Fi Channel State Information (CSI) data. Using CSI enables contactless activity recognition without relying on wearable sensors. We implement a full pipeline, from loading and visualizing CSI signals, to building and training a CNN-LSTM model, to fine-tuning and evaluating performance. The project is structured for educational purposes, aiming to help learners understand how to process time-series signal data for classification tasks.
 
-## 🧠 Project Goals
-- Preprocess CSI data and align it with activity labels.
-- Train a CNN-LSTM model for multi-class activity classification.
-- Evaluate performance and explore enhancements using bounding box data.
+### Project Structure
+- 📈 CSI Data Visualization: Explore signal patterns using heatmaps and subcarrier plots.
+- 🧹 Data Preprocessing: Normalize and reshape CSI data into suitable input for neural networks.
+- 🧠 Model Architecture: CNN-LSTM hybrid model capturing spatial and temporal signal features.
+- 🏋️ Training and Fine-Tuning: Training loop, evaluation metrics, and simple fine-tuning for demonstration.
+- 📊 Evaluation: Test set accuracy and confusion matrix to assess classification performance.
 
 ## 📁 Dataset
 
@@ -34,7 +37,7 @@ This dataset includes:
 - `label.csv`: Activity labels per sample.
 - `label_boxes.csv`: Bounding box information (optional extension).
 
-## 📌 Results
+## 🔍 Results
 - **Accuracy:** ~98%
 - **Note:** Although fine-tuning yielded only a modest accuracy improvement, the structure of the code allows for easy future experimentation and optimization.
 
