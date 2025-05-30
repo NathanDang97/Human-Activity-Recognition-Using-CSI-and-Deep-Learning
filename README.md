@@ -38,7 +38,10 @@ This dataset includes:
 - `label_boxes.csv`: Bounding box information (optional extension).
 
 ## ▶️ Run the Training Pipeline
-The source code can be found in the _src_ folder. Before running the code, make sure the _data_ folder contains _data.csv_ and _label.csv_.
+The source code can be found in the _src_ folder. Before running the code, make sure the _data_ folder contains _data.csv_ and _label.csv_, and make sure all of the requirements are installed by running:
+```
+pip install -r requirements.txt
+```
 Then run:
 ```
 python main.py
