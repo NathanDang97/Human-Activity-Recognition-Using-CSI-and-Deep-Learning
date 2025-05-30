@@ -37,6 +37,17 @@ This dataset includes:
 - `label.csv`: Activity labels per sample.
 - `label_boxes.csv`: Bounding box information (optional extension).
 
+## ▶️ Run the Training Pipeline
+The source code can be found in the _src_ folder. Before running the code, make sure the _data_ folder contains _data.csv_ and _label.csv_.
+Then run:
+```
+python main.py
+```
+Or, run with custom hyperparameters, e.g.:
+```
+python main.py --epochs 30 --batch_size 128 --learning_rate 0.0005 --hidden_dim 256
+```
+
 ## 🔍 Results
 - **Accuracy:** ~98%
 - **Note:** Although fine-tuning yielded only a modest accuracy improvement, the structure of the code allows for easy future experimentation and optimization.
