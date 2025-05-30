@@ -1,3 +1,4 @@
+import argparse
 import torch
 from torch.utils.data import DataLoader, Dataset
 from data_loader import load_raw_csi_data
@@ -18,9 +19,21 @@ class CSIDataset(Dataset):
 
     def __getitem__(self, idx):
         return self.X[idx], self.y[idx]
+    
+# method to parse arguments from terminal   
+def parse_args():
+    parser = argparse.ArgumentParser(description="Train CNN-LSTM on CSI Data")
+    parser.add_argument('--epochs', type=int, default=50, help='Number of training epochs')
+    parser.add_argument('--batch_size', type=int, default=64, help='Batch size')
+    parser.add_argument('--learning_rate', type=float, default=0.001, help='Learning rate')
+    parser.add_argument('--hidden_dim', type=int, default=256, help='LSTM hidden dimension')
+    return parser.parse_args()
 
 # work pipeline
 def main():
+    # 0. Load the arguments from terminal
+    args = parse_args()
+
     # 1. Load and preprocess data
     X, y = load_raw_csi_data()
     X_processed, y_processed, label_encoder = preprocess_csi_data(X, y)
@@ -31,10 +44,10 @@ def main():
     # 3. Define the model
     # 3.1 training configs and hyperparameters from the best model from the notebook
     INPUT_SIZE = X_processed.shape[2] # no. subcarries
-    BATCH_SIZE = 64
-    LEARNING_RATE = 0.001
-    NUM_EPOCHS = 50
-    HIDDEN_DIM = 256
+    BATCH_SIZE = args.batch_size
+    LEARNING_RATE = args.learning_rate
+    NUM_EPOCHS = args.epochs
+    HIDDEN_DIM = args.hidden_dim
     NUM_CLASSES = len(label_encoder.classes_)
     # 3.2 hardware config
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
