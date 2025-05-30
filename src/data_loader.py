@@ -2,7 +2,7 @@ import pandas as pd
 
 # Loads raw CSI data and corresponding labels from preprocessed CSV files.
 # Drop the last sample to fix known bug in dataset
-def load_raw_csi_data(data_path="data/data.csv", label_path="data/label.csv"):
+def load_raw_csi_data(data_path="../data/data.csv", label_path="../data/label.csv"):
     df_data = pd.read_csv(data_path, header=None)
     df_label = pd.read_csv(label_path, header=None)
     

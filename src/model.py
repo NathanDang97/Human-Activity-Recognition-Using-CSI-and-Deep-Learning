@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 # from grid search in the notebook
-DROP_OUT = 0.2
+DROP_OUT = 0.3
 
 class CNNLSTM(nn.Module):
     def __init__(self, input_size, hidden_size, num_classes):

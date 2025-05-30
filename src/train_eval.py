@@ -61,12 +61,12 @@ def train_model(model, train_loader, val_loader, device, learning_rate, epochs, 
         scheduler.step(val_acc)
         print(f"Epoch {epoch+1}/{epochs} - Loss: {running_loss:.4f}, Val Accuracy: {val_acc:.4f}")
 
-        # Save best model checkpoint during training
+        # update best model checkpoint during training
         if val_acc > best_val_acc:
             best_val_acc = val_acc
-            torch.save(model.state_dict(), checkpoint_path)
             patience_counter = 0
-            print("Model checkpoint saved.")
+            # torch.save(model.state_dict(), checkpoint_path)
+            # print("Model checkpoint saved.")
         else:
             patience_counter += 1
 

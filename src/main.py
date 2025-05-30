@@ -32,9 +32,9 @@ def main():
     # 3.1 training configs and hyperparameters from the best model from the notebook
     INPUT_SIZE = X_processed.shape[2] # no. subcarries
     BATCH_SIZE = 64
-    LEARNING_RATE = 0.01
+    LEARNING_RATE = 0.001
     NUM_EPOCHS = 50
-    HIDDEN_DIM = 128
+    HIDDEN_DIM = 256
     NUM_CLASSES = len(label_encoder.classes_)
     # 3.2 hardware config
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

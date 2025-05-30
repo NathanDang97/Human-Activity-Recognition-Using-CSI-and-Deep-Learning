@@ -38,7 +38,7 @@ def preprocess_csi_data(X_raw, y_raw, num_subcarriers=114, smoothing_window=3, a
 
     # concatenate statistics along the time axis
     X_stats = extract_stats(X)
-    print(f"Reshaping to (samples={num_samples}, time_steps and stats={time_steps + 5}, subcarriers={num_subcarriers})")
+    # print(f"Reshaping to (samples={num_samples}, time_steps and stats={time_steps + 5}, subcarriers={num_subcarriers})")
     X_aug = np.concatenate([X, X_stats], axis=1)  # shape: (N, T+5, F)
 
     # label encoding
@@ -55,7 +55,7 @@ def train_test_val_split(X, y):
     assert len(X_train) == len(y_train)
     assert len(X_val) == len(y_val)
     assert len(X_test) == len(y_test)
-    print("Train / Val / Test data sizes:", len(X_train), len(X_val), len(X_test))
-    print("Train / Val / Test label sizes:", len(y_train), len(y_val), len(y_test))
+    # print("Train / Val / Test data sizes:", len(X_train), len(X_val), len(X_test))
+    # print("Train / Val / Test label sizes:", len(y_train), len(y_val), len(y_test))
     
     return X_train, X_val, X_test, y_train, y_val, y_test
